@@ -1,6 +1,5 @@
 package lk.ijse.controller;
 
-import com.jfoenix.controls.JFXBadge;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,17 +11,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
-import lk.ijse.bo.custom.CustomerBO;
 import lk.ijse.bo.custom.EmployeeBO;
-import lk.ijse.bo.custom.impl.EmployeeBOImpl;
 import lk.ijse.dto.EmployeeDTO;
 import lk.ijse.tm.EmployeeTm;
 
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -145,17 +140,26 @@ public class EmployeeForm {
 
 
         EmployeeDTO employee = new EmployeeDTO(id, name, department, title, address, tel,"U001");
-
-        try {
-            boolean isSaved = employeeBO.save(employee);
-            if (isSaved) {
-                loadAllEmployees();
-                new Alert(Alert.AlertType.CONFIRMATION, "employee saved!").show();
-                clearFields();
+        if (name.matches("(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{2,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})")&
+                department.matches("^[a-zA-Z ]+$")&
+                        title.matches("\\b[sS][aA][lL][eE][sS]\\b\n")&
+                                address.matches("^[A-z|\\\\s]{3,}$")&
+                                        tel.matches("^\\d{10}$"))
+        {
+            try {
+                boolean isSaved = employeeBO.save(employee);
+                if (isSaved) {
+                    loadAllEmployees();
+                    new Alert(Alert.AlertType.CONFIRMATION, "employee saved!").show();
+                    clearFields();
+                }
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        }else {
+            new Alert(Alert.AlertType.ERROR,"not valid data").show();
         }
+
     }
 
     @FXML

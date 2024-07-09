@@ -11,11 +11,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.SalaryBO;
-import lk.ijse.bo.custom.impl.SalaryBOImpl;
-import lk.ijse.dao.custom.impl.SalaryDAOImpl;
 import lk.ijse.dto.SalaryDTO;
 import lk.ijse.tm.SalaryTm;
 
@@ -23,7 +20,6 @@ import lk.ijse.tm.SalaryTm;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SalaryForm {
 
@@ -210,6 +206,6 @@ public class SalaryForm {
     }
 
     public void idtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.ID,txtId);
+
     }
 }

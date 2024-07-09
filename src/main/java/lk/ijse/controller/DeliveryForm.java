@@ -11,11 +11,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.DeliveryBO;
-import lk.ijse.bo.custom.impl.CustomerBOImpl;
-import lk.ijse.bo.custom.impl.DeliveryBOImpl;
 import lk.ijse.dto.DeliveryDTO;
 import lk.ijse.tm.DeliveryTm;
 
@@ -176,7 +173,7 @@ public class DeliveryForm {
 
         DeliveryDTO delivery = new DeliveryDTO(id,status,date,v_id);
 
-
+if (status.matches("^[a-zA-Z ]+$")){
         try {
             boolean isSaved = deliveryBO.save(delivery);
             if (isSaved) {
@@ -187,6 +184,9 @@ public class DeliveryForm {
         } catch (SQLException | ClassNotFoundException e) {
            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+}else{
+    new Alert(Alert.AlertType.ERROR,"not valid data").show();
+}
     }
 
     public void txtsearchOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {

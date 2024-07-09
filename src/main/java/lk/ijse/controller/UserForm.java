@@ -14,10 +14,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UserBO;
-import lk.ijse.bo.custom.impl.UserBOImpl;
 import lk.ijse.dto.UserDTO;
 import lk.ijse.tm.UserTm;
 
@@ -25,7 +23,6 @@ import lk.ijse.tm.UserTm;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class UserForm {
 
@@ -140,16 +137,22 @@ public class UserForm {
         String tel = txtContact.getText();
 
         UserDTO user = new UserDTO(id, name,  password, tel);
-
-        try {
-            boolean isSaved = userBO.save(user);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "user saved!").show();
-                initialize();
-                clearFields();
+        if (name.matches("(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{2,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})")&
+                password.matches(".{8,}")&
+                tel.matches("^\\d{10}$")) {
+            try {
+                boolean isSaved = userBO.save(user);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "user saved!").show();
+                    initialize();
+                    clearFields();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        }else{
+            new Alert(Alert.AlertType.ERROR,"not valid data").show();
+
         }
     }
 
@@ -191,18 +194,18 @@ public class UserForm {
     }
 
     public void idtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.ID,txtId);
+
     }
 
     public void nametextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.NAME,txtName);
+
     }
 
     public void passwordtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.PASSWORD,txtPassword);
+
     }
 
     public void teltextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.CONTACT,txtContact);
+
     }
 }

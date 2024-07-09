@@ -14,20 +14,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 
 
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.CustomerBO;
-import lk.ijse.bo.custom.impl.CustomerBOImpl;
 import lk.ijse.dto.CustomerDTO;
-import lk.ijse.entity.Customer;
 import lk.ijse.tm.CustomerTm;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class CustomerForm {

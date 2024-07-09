@@ -12,12 +12,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 
 
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.SupplierBO;
-import lk.ijse.bo.custom.impl.SupplierBOImpl;
 import lk.ijse.dto.SupplierDTO;
 import lk.ijse.tm.SupplierTm;
 
@@ -158,18 +156,23 @@ public class SupplierForm {
 
         SupplierDTO supplier = new SupplierDTO(id, name, terms, address, tel);
 
-        //System.out.println("palaweni eka   "+supplier);
-
-        try {
-            boolean isSaved = supplierBO.save(supplier);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "supplier saved!").show();
-                initialize();
-                clearFields();
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+if (name.matches("(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{2,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})")&
+address.matches("^[A-z|\\\\s]{3,}$")&
+tel.matches("^\\d{10}$")) {
+    try {
+        boolean isSaved = supplierBO.save(supplier);
+        if (isSaved) {
+            new Alert(Alert.AlertType.CONFIRMATION, "supplier saved!").show();
+            initialize();
+            clearFields();
         }
+    } catch (SQLException | ClassNotFoundException e) {
+        throw new RuntimeException(e);
+    }
+}else {
+    new Alert(Alert.AlertType.ERROR,"not valid data").show();
+
+}
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -212,18 +215,18 @@ public class SupplierForm {
     }
 
     public void idtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.ID,txtId);
+
     }
 
     public void nametextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.NAME,txtName);
+
     }
 
     public void addresstextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.ADDRESS,txtAddress);
+
     }
 
     public void teltextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.TEL,txtTel);
+
     }
 }

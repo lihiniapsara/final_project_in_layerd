@@ -11,17 +11,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.VehicalBO;
-import lk.ijse.bo.custom.impl.VehicalBOImpl;
 import lk.ijse.dto.VehicalDTO;
-import lk.ijse.entity.Vehical;
 import lk.ijse.tm.VehicalTm;
 
 
 import java.io.IOException;
-import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -162,20 +158,25 @@ public class VehicalForm {
         String e_id = cbE_Id.getValue();
 
         VehicalDTO vehical = new VehicalDTO(id, model, type, e_id);
+if (model.matches("^[a-zA-Z ]+$")&
+type.matches("^[a-zA-Z ]+$")) {
 
+    // System.out.println("palaweni eka   "+vehical);
 
-       // System.out.println("palaweni eka   "+vehical);
-
-        try {
-            boolean isSaved = vehicalBO.save(vehical);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "vehical saved!").show();
-                initialize();
-                clearFields();
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+    try {
+        boolean isSaved = vehicalBO.save(vehical);
+        if (isSaved) {
+            new Alert(Alert.AlertType.CONFIRMATION, "vehical saved!").show();
+            initialize();
+            clearFields();
         }
+    } catch (SQLException | ClassNotFoundException e) {
+        throw new RuntimeException(e);
+    }
+}else{
+    new Alert(Alert.AlertType.ERROR,"not valid data").show();
+
+}
     }
 
     @FXML
@@ -215,14 +216,14 @@ public class VehicalForm {
     }
 
     public void modeltextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.MODEL,txtModel);
+
     }
 
     public void idtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.ID,txtId);
+
     }
 
     public void typetextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.TYPE,txtType);
+
     }
 }

@@ -11,11 +11,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.StockBO;
-import lk.ijse.bo.custom.impl.StockBOImpl;
 import lk.ijse.bo.custom.impl.SupplierBOImpl;
 import lk.ijse.dto.StockDTO;
 import lk.ijse.dto.SupplierStockDetailDTO;
@@ -25,7 +23,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BinaryOperator;
 
 public class StockForm {
 
@@ -166,16 +163,21 @@ public class StockForm {
 
         StockDTO stock=new StockDTO(id,category,level);
         SupplierStockDetailDTO supplierStockDetailDTO = new SupplierStockDetailDTO(sid,stockid);
+if (category.matches("^[a-zA-Z ]+$")&
+level.matches("^\\d+(\\.\\d{2})?$")) {
+    Boolean isSaved = stockBO.saveData(stock, supplierStockDetailDTO);
 
-        Boolean isSaved = stockBO.saveData(stock,supplierStockDetailDTO);
+    if (isSaved) {
+        new Alert(Alert.AlertType.CONFIRMATION, "data saved").show();
+    } else {
+        new Alert(Alert.AlertType.ERROR, "data not saved").show();
+    }
 
-        if (isSaved){
-            new Alert(Alert.AlertType.CONFIRMATION,"data saved").show();
-        }else {
-            new Alert(Alert.AlertType.ERROR,"data not saved").show();
-        }
+}
+    else {
+    new Alert(Alert.AlertType.ERROR,"not valid data").show();
 
-        clearFields();
+}
     }
 
     @FXML
@@ -217,13 +219,14 @@ public class StockForm {
 
 
     public void leveltextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.LEVEL,txtLevel);
+
     }
 
     public void idtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.ID,txtId);
+
     }
 
-    public void categorytextKeyReleased(KeyEvent keyEvent) {Regex.setTextColor(lk.ijse.Util.TextField.CATEGORY,txtCategory);
+    public void categorytextKeyReleased(KeyEvent keyEvent) {
+
     }
 }

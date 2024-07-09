@@ -8,10 +8,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UserBO;
-import lk.ijse.bo.custom.impl.UserBOImpl;
 import lk.ijse.dto.UserDTO;
 
 
@@ -32,8 +30,12 @@ public class RegistrationForm {
         String password = txtPw.getText();
         String tel = txtContact.getText();
 
-
-        try {
+        if(name.matches("^[A-Za-z\\s]+$")&
+                password.matches(".{8,}")&
+                tel.matches("^(\\+\\d{1,3}[- ]?)?\\d{10}$")
+        )
+        {
+            try {
             UserDTO user = new UserDTO(id, name,  password, tel);
             boolean isSaved = userBO.save(user);
             if (isSaved) {
@@ -43,6 +45,10 @@ public class RegistrationForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
 
+
+        }
+        }else {
+            new Alert(Alert.AlertType.ERROR,"not valid data").show();
 
         }
     }
@@ -68,18 +74,18 @@ public class RegistrationForm {
     }
 
     public void idtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.ID,txtId);
+
     }
 
     public void nametextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.NAME,txtName);
+
     }
 
     public void passwordtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.PASSWORD,txtPw);
+
     }
 
     public void teltextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.TEL,txtContact);
+
     }
 }

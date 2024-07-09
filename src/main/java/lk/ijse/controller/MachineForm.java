@@ -10,10 +10,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.MachineBO;
-import lk.ijse.bo.custom.impl.MachineBOImpl;
 import lk.ijse.dto.MachineDTO;
 import lk.ijse.tm.MachineTm;
 
@@ -132,20 +130,26 @@ public class MachineForm {
         String id = txtId.getText();
         String model = txtModel.getText();
         String type = txtType.getText();
-        String e_id =  cbemployeeId.getValue();
-try {
-    MachineDTO machine = new MachineDTO(id, model, type, e_id);
+        String e_id = cbemployeeId.getValue();
 
-    boolean issaved = machineBO.save(machine);
-    if (issaved) {
-        new Alert(Alert.AlertType.CONFIRMATION, "machine saved ").show();
+        if (model.matches("^[a-zA-Z ]+$") &
+                type.matches("^[a-zA-Z ]+$")) {
+            try {
+                MachineDTO machine = new MachineDTO(id, model, type, e_id);
 
-    } else {
-        new Alert(Alert.AlertType.ERROR, "failed saved").show();
-    }
-}catch (Exception e){
-    new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
-}
+                boolean issaved = machineBO.save(machine);
+                if (issaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "machine saved ").show();
+
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "failed saved").show();
+                }
+            } catch (Exception e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            }
+        } else {
+            new Alert(Alert.AlertType.ERROR, "not valid data").show();
+        }
 
     }
 

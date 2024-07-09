@@ -11,16 +11,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.UserBO;
-import lk.ijse.bo.custom.impl.UserBOImpl;
-import lk.ijse.db.DBConnection;
-import lk.ijse.Util.Regex;
-import lk.ijse.dto.CustomerDTO;
-import lk.ijse.dto.UserDTO;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginForm {
@@ -102,6 +94,5 @@ public class LoginForm {
     }
 
     public void idtextKeyReleased(KeyEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.Util.TextField.ID,txtId);
     }
 }

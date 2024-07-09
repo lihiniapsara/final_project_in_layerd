@@ -11,10 +11,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
 import lk.ijse.bo.custom.PaymentBO;
-import lk.ijse.bo.custom.impl.PaymentBOImpl;
 import lk.ijse.dto.PaymentDTO;
 import lk.ijse.tm.PaymentTm;
 
@@ -181,16 +179,20 @@ public class PaymentForm {
 
 
         PaymentDTO payment = new PaymentDTO(id,method, date,amount);
-
-        try {
-            boolean isSaved = paymentBO.save(payment);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "payment saved!").show();
-                clearFields();
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+if(method.matches("^[a-zA-Z ]+$")&
+amount.matches("^\\d+(\\.\\d{2})?$" )) {
+    try {
+        boolean isSaved = paymentBO.save(payment);
+        if (isSaved) {
+            new Alert(Alert.AlertType.CONFIRMATION, "payment saved!").show();
+            clearFields();
         }
+    } catch (SQLException | ClassNotFoundException e) {
+        throw new RuntimeException(e);
+    }
+}else {
+    new Alert(Alert.AlertType.ERROR,"not valid data").show();
+}
     }
 
     private void clearFields() {

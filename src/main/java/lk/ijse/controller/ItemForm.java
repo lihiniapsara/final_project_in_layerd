@@ -11,17 +11,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.Util.Regex;
 import lk.ijse.bo.BOFactory;
-import lk.ijse.bo.custom.CustomerBO;
 import lk.ijse.bo.custom.ItemBO;
-import lk.ijse.bo.custom.impl.ItemBOImpl;
 import lk.ijse.dto.ItemDTO;
 import lk.ijse.tm.ItemTm;
 
 
 import java.io.IOException;
-import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -184,14 +180,20 @@ public class ItemForm {
 
         ItemDTO item = new ItemDTO(id,description,price,qty,s_id);
 
-        try {
-            boolean isSaved = itemBO.save(item);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "item saved!").show();
-                clearFields();
+        if (description.matches("\\b[sS][aA][lL][eE][sS]\\b\n")&
+        price.matches("^\\d+(\\.\\d{2})?$")) {
+
+            try {
+                boolean isSaved = itemBO.save(item);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "item saved!").show();
+                    clearFields();
+                }
+            } catch (SQLException | ClassNotFoundException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        }else {
+            new Alert(Alert.AlertType.ERROR,"not valid data").show();
         }
     }
 
