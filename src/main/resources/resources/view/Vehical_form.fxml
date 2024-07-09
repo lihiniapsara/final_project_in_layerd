@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="422.0" prefWidth="570.0" style="-fx-background-radius: 30;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.VehicalForm">
+    <children>
+        <ImageView fitHeight="422.0" fitWidth="390.0" layoutX="121.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/background.jpeg.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="244.0" layoutY="24.0" prefHeight="26.0" prefWidth="150.0" text="Vehical Manage">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="187.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/vehicle-icon-png-8.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="127.0" layoutY="83.0" text="Vehical Id:">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <Label layoutX="122.0" layoutY="130.0" text="  Model:">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <Label layoutX="127.0" layoutY="168.0" text="Type:">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <Label layoutX="126.0" layoutY="210.0" text="Employee Id:">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtId" layoutX="256.0" layoutY="80.0" onKeyReleased="#idtextKeyReleased" prefHeight="26.0" prefWidth="188.0" />
+        <TextField fx:id="txtModel" layoutX="255.0" layoutY="127.0" onKeyReleased="#modeltextKeyReleased" prefHeight="26.0" prefWidth="188.0" promptText="Enter Model" />
+        <TableView fx:id="tblVehical" layoutX="105.0" layoutY="263.0" prefHeight="142.0" prefWidth="451.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="97.59998321533203" text="Id" />
+                <TableColumn fx:id="colModel" prefWidth="207.20001220703125" text="Model" />
+                <TableColumn fx:id="colType" prefWidth="146.40005493164062" text="Type" />
+            </columns>
+        </TableView>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="270.0" onAction="#btnSaveOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Save" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="308.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Update" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="346.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Delete" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="381.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Clear" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="441.0" layoutY="14.0" onAction="#btnDashboardOnAction" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #189AB4;" text="      Dashboard" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="453.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/dashboard.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/clean.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/Delete.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/update.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/save.png" />
+            </image>
+        </ImageView>
+        <ChoiceBox fx:id="cbE_Id" layoutX="255.0" layoutY="207.0" prefHeight="26.0" prefWidth="188.0" />
+        <TextField fx:id="txtType" layoutX="255.0" layoutY="165.0" onKeyReleased="#typetextKeyReleased" prefHeight="26.0" prefWidth="188.0" promptText="Enter Type" />
+      <TextField fx:id="txtsearch" layoutX="17.0" layoutY="50.0" onAction="#txtSearchOnAction" promptText="enter vehical id" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="422.0" prefWidth="570.0" style="-fx-background-radius: 30;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ItemForm">
+    <children>
+        <ImageView fitHeight="422.0" fitWidth="390.0" layoutX="113.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/background.jpeg.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="223.0" layoutY="17.0" prefHeight="26.0" prefWidth="150.0" text="Item Manage">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="181.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/items-icon-29.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="147.0" layoutY="77.0" text="Item Id:">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <Label layoutX="147.0" layoutY="115.0" text="Description :">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <Label layoutX="147.0" layoutY="152.0" text="Item Price :">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtId" layoutX="270.0" layoutY="74.0" onKeyReleased="#idtextKeyReleased" prefHeight="26.0" prefWidth="186.0" />
+        <TextField fx:id="txtPrice" layoutX="270.0" layoutY="149.0" onKeyReleased="#pricetextKeyReleased" prefHeight="26.0" prefWidth="186.0" promptText="Enter Item Price" />
+        <TableView fx:id="tblItem" layoutX="104.0" layoutY="253.0" prefHeight="153.0" prefWidth="458.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="96.79999542236328" text="Id" />
+                <TableColumn fx:id="colDescription" prefWidth="221.5999755859375" text="Description" />
+                <TableColumn fx:id="colPrice" prefWidth="138.39987182617188" text="Price" />
+            </columns>
+        </TableView>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="270.0" onAction="#btnSaveOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Save" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="308.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Update" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="346.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Delete" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="381.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Clear" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="433.0" layoutY="17.0" onAction="#btnDashboardOnAction" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #189AB4;" text="      Dashboard" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="445.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/dashboard.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/clean.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/Delete.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/update.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/save.png" />
+            </image>
+        </ImageView>
+      <ComboBox fx:id="cmbDescription" layoutX="270.0" layoutY="111.0" prefHeight="26.0" prefWidth="186.0" />
+      <ComboBox fx:id="cbStockId" layoutX="270.0" layoutY="220.0" prefHeight="26.0" prefWidth="186.0" />
+      <Label layoutX="153.0" layoutY="223.0" text="Stock Id :">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="187.0" text="Qty:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQty" layoutX="270.0" layoutY="184.0" onKeyReleased="#qtytextKeyReleased" prefHeight="26.0" prefWidth="186.0" promptText="Entre Qty" />
+      <TextField fx:id="txtsearch" layoutX="17.0" layoutY="17.0" onAction="#txtSearchOnAction" prefHeight="26.0" prefWidth="127.0" promptText="search here" />
+    </children>
+</AnchorPane>

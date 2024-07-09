@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="533.0" prefWidth="722.0" style="-fx-background-color: A0DEFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.DashBoardForm">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00215e" height="535.0" layoutY="-1.0" stroke="#0d0d0d" strokeType="INSIDE" strokeWidth="4.0" style="-fx-arc-height: 30; -fx-arc-width: 30;" width="132.0" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="93.0" onAction="#loadItemPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="    Item" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="130.0" onAction="#loadIEmployeePageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="     Employee" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="168.0" onAction="#loadPaymentPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="    Payment" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="206.0" onAction="#loadStockPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="Stock" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="240.0" onAction="#loadSupplierPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="   Supplier" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="276.0" onAction="#loadSalaryPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="Salary" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="311.0" onAction="#loadPlaceOrderPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="Order" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="344.0" onAction="#loadDeliveryPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="Delivery" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="377.0" onAction="#loadMachinePageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="Machine" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="410.0" onAction="#loadVehicalPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="Vehical" textFill="WHITE" />
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="492.0" onAction="#btnLogOutOnAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06#122E4BEFFF;" text="LogOut" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <AnchorPane fx:id="ancorpane" layoutX="139.0" layoutY="75.0" prefHeight="442.0" prefWidth="570.0" style="-fx-background-color: #ffff; -fx-background-radius: 30;">
+         <children>
+            <ImageView fitHeight="316.0" fitWidth="565.0" layoutX="6.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/Screenshot%202024-05-18%20032431.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <ImageView fitHeight="55.0" fitWidth="50.0" layoutX="264.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/dashboard.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="367.0" layoutY="14.0" prefHeight="37.0" prefWidth="196.0" text="DashBoard">
+         <font>
+            <Font name="System Bold Italic" size="25.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/logout-icon-android-29.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/customer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="21.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/items-icon-29.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/Payment-Transparent-Images-PNG.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/stock-market-icon-1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/customer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/salary-icon-2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="21.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/plase_order.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="352.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/deliver-icon-0.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/machine-icon-15.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/vehicle-icon-png-8.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="443.0" onAction="#loadUserPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="User" textFill="WHITE" />
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/user.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="56.0" onAction="#loadCustomerPageAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #0A06E00215EFFF;" text="   Customer" textFill="WHITE" />
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="21.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/customer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="19.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/customer.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="96.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/logo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

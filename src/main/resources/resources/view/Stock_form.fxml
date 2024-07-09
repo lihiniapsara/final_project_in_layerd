@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="422.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.StockForm">
+    <children>
+        <ImageView fitHeight="422.0" fitWidth="390.0" layoutX="121.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/background.jpeg.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="242.0" layoutY="14.0" prefHeight="26.0" prefWidth="150.0" text="Stock Manage">
+            <font>
+                <Font name="System Bold Italic" size="16.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="190.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/stock-market-icon-1.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="140.0" layoutY="86.0" text="Stock Id:">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <Label layoutX="136.0" layoutY="123.0" text="Category:">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <Label layoutX="136.0" layoutY="163.0" text="Stock_Level:">
+            <font>
+                <Font name="System Bold Italic" size="13.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtId" layoutX="263.0" layoutY="83.0" onAction="#txtSearchOnAction" onKeyReleased="#idtextKeyReleased" prefHeight="26.0" prefWidth="179.0" promptText="Enter Stock Id" />
+        <TextField fx:id="txtLevel" layoutX="263.0" layoutY="160.0" onKeyReleased="#leveltextKeyReleased" prefHeight="26.0" prefWidth="179.0" promptText="Enter Stock_Level" />
+        <TableView fx:id="tblStock" layoutX="102.0" layoutY="241.0" prefHeight="166.0" prefWidth="458.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="78.39997100830078" text="Id" />
+                <TableColumn fx:id="colCategory" prefWidth="224.0" text="Category" />
+                <TableColumn fx:id="colLevel" prefWidth="155.20004272460938" text="Level" />
+            </columns>
+        </TableView>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="267.0" onAction="#btnSaveOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Save" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="305.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Update" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="343.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Delete" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="378.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Clear" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <JFXButton buttonType="RAISED" layoutX="441.0" layoutY="14.0" onAction="#btnDashboardOnAction" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #189AB4;" text="      Dashboard" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="453.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/dashboard.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/clean.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/Delete.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/update.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="17.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../icon/save.png" />
+            </image>
+        </ImageView>
+      <ChoiceBox fx:id="cbS_Id" layoutX="263.0" layoutY="198.0" prefHeight="26.0" prefWidth="179.0" />
+      <Label layoutX="140.0" layoutY="201.0" text="Supplier Id:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCategory" layoutX="263.0" layoutY="120.0" onKeyReleased="#categorytextKeyReleased" prefHeight="26.0" prefWidth="179.0" promptText="Enter Category" />
+    </children>
+</AnchorPane>

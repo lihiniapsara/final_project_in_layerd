@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="422.0" prefWidth="570.0" style="-fx-background-radius: 30;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UserForm">
+   <children>
+      <ImageView fitHeight="422.0" fitWidth="390.0" layoutX="121.0" layoutY="2.0" opacity="0.57" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/background.jpeg.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="236.0" layoutY="14.0" prefHeight="26.0" prefWidth="150.0" text="User Manage">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="126.0" layoutY="64.0" text="User ID:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="126.0" layoutY="114.0" text="User Name:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="131.0" layoutY="168.0" text="Password:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="262.0" layoutY="61.0" onKeyReleased="#idtextKeyReleased" prefHeight="26.0" prefWidth="185.0" />
+      <TextField fx:id="txtName" layoutX="261.0" layoutY="111.0" onKeyReleased="#nametextKeyReleased" prefHeight="26.0" prefWidth="186.0" promptText="Enter User Name" />
+      <TextField fx:id="txtPassword" layoutX="263.0" layoutY="165.0" onKeyReleased="#passwordtextKeyReleased" prefHeight="26.0" prefWidth="186.0" promptText="Enter User Password" />
+      <TextField fx:id="txtContact" layoutX="263.0" layoutY="213.0" onAction="#txtSearchOnAction" onKeyReleased="#teltextKeyReleased" prefHeight="26.0" prefWidth="186.0" promptText="Enter Contact Number" />
+      <Label layoutX="136.0" layoutY="216.0" text="Contact:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblUser" layoutX="119.0" layoutY="258.0" prefHeight="150.0" prefWidth="438.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="75.0" text="User ID" />
+          <TableColumn fx:id="colName" prefWidth="118.40000915527344" text="User Name" />
+            <TableColumn fx:id="colpw" prefWidth="143.199951171875" text="Password" />
+            <TableColumn fx:id="colTe" prefWidth="100.00006103515625" text="Contact" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="270.0" onAction="#btnSaveOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="308.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="346.0" onAction="#btnDeleteOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="20.0" layoutY="381.0" onAction="#btnClearOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #189AB4;" text="      Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="23.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/clean.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="23.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/Delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="23.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/update.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="23.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/save.png" />
+         </image>
+      </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="449.0" layoutY="14.0" onAction="#btnDashboardOnAction" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: #189AB4;" text="      Dashboard" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="461.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/dashboard.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="177.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/user.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

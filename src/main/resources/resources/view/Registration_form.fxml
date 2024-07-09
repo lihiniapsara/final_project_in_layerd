@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="533.0" prefWidth="722.0" styleClass="backgroundColour2" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RegistrationForm">
+   <children>
+      <ImageView fitHeight="448.0" fitWidth="568.0" layoutX="97.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/Shopping.png" />
+         </image>
+      </ImageView>
+       <Label layoutX="252.0" layoutY="22.0" prefHeight="73.0" prefWidth="347.0" text="Registration Form">
+           <font>
+               <Font name="System Bold Italic" size="36.0" />
+           </font>
+       </Label>
+       <ImageView fitHeight="74.0" fitWidth="77.0" layoutX="166.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../../../../../../FinalProject/src/main/resources/icon/register.png" />
+           </image>
+       </ImageView>
+       <Label layoutX="177.0" layoutY="164.0" text="User Id:">
+           <font>
+               <Font name="System Bold Italic" size="14.0" />
+           </font>
+       </Label>
+       <Label layoutX="177.0" layoutY="213.0" text="User Name:">
+           <font>
+               <Font name="System Bold Italic" size="14.0" />
+           </font>
+       </Label>
+       <Label layoutX="176.0" layoutY="264.0" text="Password:">
+           <font>
+               <Font name="System Bold Italic" size="14.0" />
+           </font>
+       </Label>
+       <TextField fx:id="txtId" layoutX="331.0" layoutY="161.0" onKeyReleased="#idtextKeyReleased" prefHeight="26.0" prefWidth="234.0" promptText="Enter User Id" />
+       <TextField fx:id="txtName" layoutX="330.0" layoutY="210.0" onKeyReleased="#nametextKeyReleased" prefHeight="26.0" prefWidth="234.0" promptText="Enter User Name" />
+       <TextField fx:id="txtPw" layoutX="330.0" layoutY="255.0" onKeyReleased="#passwordtextKeyReleased" prefHeight="26.0" prefWidth="234.0" promptText="Enter Password" />
+      <JFXButton buttonType="RAISED" layoutX="276.0" layoutY="406.0" onAction="#btnRegisterOnAction" prefHeight="26.0" prefWidth="180.0" style="-fx-background-color: #f1c40f;" text="Register Now">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="599.0" layoutY="473.0" onAction="#btnBackOnAction" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: #00ffe5;" text="Back">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <TextField fx:id="txtContact" layoutX="328.0" layoutY="300.0" onKeyReleased="#teltextKeyReleased" prefHeight="26.0" prefWidth="241.0" promptText="Enter Contact Number" />
+      <Label layoutX="176.0" layoutY="303.0" text="Contact:">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+   </children>
+
+</AnchorPane>
