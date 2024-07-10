@@ -150,6 +150,7 @@ public class StockForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     @FXML
@@ -178,6 +179,7 @@ level.matches("^\\d+(\\.\\d{2})?$")) {
     new Alert(Alert.AlertType.ERROR,"not valid data").show();
 
 }
+        clearFields();
     }
 
     @FXML
@@ -198,6 +200,7 @@ level.matches("^\\d+(\\.\\d{2})?$")) {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     @FXML

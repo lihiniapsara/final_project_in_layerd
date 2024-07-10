@@ -140,12 +140,13 @@ public class EmployeeForm {
 
 
         EmployeeDTO employee = new EmployeeDTO(id, name, department, title, address, tel,"U001");
-        if (name.matches("(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{2,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})")&
-                department.matches("^[a-zA-Z ]+$")&
-                        title.matches("\\b[sS][aA][lL][eE][sS]\\b\n")&
-                                address.matches("^[A-z|\\\\s]{3,}$")&
+        if (name.matches("^[A-Za-z\\s]+$")&
+                department.matches("[A-Za-z]+")&
+                        title.matches("[A-Za-z]+")&
+                                address.matches("^[\\w\\s,.-]+$")&
                                         tel.matches("^\\d{10}$"))
         {
+
             try {
                 boolean isSaved = employeeBO.save(employee);
                 if (isSaved) {
@@ -187,6 +188,7 @@ public class EmployeeForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     @FXML
@@ -221,6 +223,7 @@ public class EmployeeForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     @FXML

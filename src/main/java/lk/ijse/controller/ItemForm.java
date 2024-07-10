@@ -145,6 +145,7 @@ public class ItemForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -180,7 +181,7 @@ public class ItemForm {
 
         ItemDTO item = new ItemDTO(id,description,price,qty,s_id);
 
-        if (description.matches("\\b[sS][aA][lL][eE][sS]\\b\n")&
+    if(qty.matches("^-?\\d+$")&
         price.matches("^\\d+(\\.\\d{2})?$")) {
 
             try {

@@ -51,6 +51,7 @@ public class RegistrationForm {
             new Alert(Alert.AlertType.ERROR,"not valid data").show();
 
         }
+        clearField();
     }
 
     public void btnBackOnAction(ActionEvent actionEvent) throws IOException {

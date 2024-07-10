@@ -173,6 +173,7 @@ tel.matches("^\\d{10}$")) {
     new Alert(Alert.AlertType.ERROR,"not valid data").show();
 
 }
+        clearFields();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -192,6 +193,7 @@ tel.matches("^\\d{10}$")) {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     public void txtSearchOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {

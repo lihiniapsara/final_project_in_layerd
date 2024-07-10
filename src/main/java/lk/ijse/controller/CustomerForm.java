@@ -134,6 +134,7 @@ public class CustomerForm {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 @FXML
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -154,6 +155,7 @@ public class CustomerForm {
     } catch (SQLException | ClassNotFoundException e) {
         new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
     }
+    clearFields();
     }
 @FXML
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
@@ -189,7 +191,7 @@ public class CustomerForm {
     }else {
         new Alert(Alert.AlertType.ERROR,"not valid data").show();
 
-    }
+    }clearFields();
 }
 @FXML
     public void txtSearchOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {

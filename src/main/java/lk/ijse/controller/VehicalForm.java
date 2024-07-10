@@ -148,6 +148,7 @@ public class VehicalForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     @FXML
@@ -177,6 +178,7 @@ type.matches("^[a-zA-Z ]+$")) {
     new Alert(Alert.AlertType.ERROR,"not valid data").show();
 
 }
+        clearFields();
     }
 
     @FXML
@@ -197,6 +199,7 @@ type.matches("^[a-zA-Z ]+$")) {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     @FXML

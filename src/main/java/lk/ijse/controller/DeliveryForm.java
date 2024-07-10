@@ -131,6 +131,7 @@ public class DeliveryForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
     private void clearFields() {
         txtId.setText("");
@@ -160,6 +161,7 @@ public class DeliveryForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
@@ -186,7 +188,7 @@ if (status.matches("^[a-zA-Z ]+$")){
         }
 }else{
     new Alert(Alert.AlertType.ERROR,"not valid data").show();
-}
+}clearFields();
     }
 
     public void txtsearchOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {

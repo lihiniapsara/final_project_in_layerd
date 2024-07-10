@@ -83,6 +83,10 @@ public class MachineForm {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
+        clearFields();
+    }
+    private void clearFields() {
+
         txtId.setText(null);
         txtModel.setText(null);
         txtType.setText(null);
@@ -104,6 +108,7 @@ public class MachineForm {
         }catch (Exception e){
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+        clearFields();
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
@@ -124,6 +129,7 @@ public class MachineForm {
         }catch (Exception e){
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+        clearFields();
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException {
@@ -150,7 +156,7 @@ public class MachineForm {
         } else {
             new Alert(Alert.AlertType.ERROR, "not valid data").show();
         }
-
+        clearFields();
     }
 
     private void getCurrentepId() {

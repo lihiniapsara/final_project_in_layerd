@@ -127,6 +127,7 @@ public class UserForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     @FXML
@@ -154,6 +155,7 @@ public class UserForm {
             new Alert(Alert.AlertType.ERROR,"not valid data").show();
 
         }
+        clearFields();
     }
 
     @FXML
@@ -175,6 +177,7 @@ public class UserForm {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clearFields();
     }
 
     @FXML
