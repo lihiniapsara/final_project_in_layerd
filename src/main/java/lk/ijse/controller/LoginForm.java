@@ -44,27 +44,7 @@ public class LoginForm {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR, "An error occurred while checking credentials!").show();
         }
-       /*// UserDTO user = userBO.check(id,pw);
-        String sql = "SELECT User_id, Password FROM user WHERE User_ID = ?";
 
-        Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        pstm.setObject(1, id);
-
-        ResultSet resultSet = pstm.executeQuery();
-        if(resultSet.next()) {
-            String dbPw = resultSet.getString(2);
-
-            if(pw.equals(dbPw)) {
-                System.out.println("user name password correct >>>>>");
-                navigateDashboard();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "sorry! password is incorrect!").show();
-            }
-
-        } else {
-            new Alert(Alert.AlertType.INFORMATION, "sorry! user id can't be find!").show();
-        }*/
     }
     private void navigateDashboard() throws IOException {
         AnchorPane root = FXMLLoader.load(getClass().getResource("/resources/view/DashBoard_form.fxml"));
