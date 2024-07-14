@@ -48,9 +48,9 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public boolean checkCredentials(String id, String pw) throws SQLException, ClassNotFoundException {
-        UserDTO user = userDAO.checkCredentials(id);
-        if (user != null) {
-            return pw.equals(user.getPassword());
+        String userPw = userDAO.checkCredentials(id);
+        if (userPw != null) {
+            return pw.equals(userPw);
         }
         return false;
     }

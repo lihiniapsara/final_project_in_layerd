@@ -12,4 +12,8 @@ public class UserDTO  {
     private String password;
     private String contact;
 
+    public UserDTO(String password, String contact) {
+        this.password = password;
+        this.contact = contact;
+    }
 }

@@ -2,11 +2,8 @@ package lk.ijse.dao.custom.impl;
 
 import lk.ijse.dao.SQLUtil;
 import lk.ijse.dao.custom.UserDAO;
-import lk.ijse.dto.UserDTO;
 import lk.ijse.entity.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -59,13 +56,12 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public UserDTO checkCredentials(String id) throws SQLException, ClassNotFoundException {
-        ResultSet resultSet = SQLUtil.execute("SELECT User_id, Password FROM user WHERE User_ID = ?",id);
+    public String checkCredentials(String id) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = SQLUtil.execute("SELECT  Password FROM user WHERE Contact = ?",id);
         if (resultSet.next()) {
-            String userId = resultSet.getString("User_id");
-            String password = resultSet.getString("Password");
+            String password = resultSet.getString(1);
 
-            return new UserDTO();
+            return password;
         }
         return null;
     }
